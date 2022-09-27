@@ -1,9 +1,11 @@
 from fileinput import filename
 import random
+from turtle import clear
 
 def choose_secret_word():
     filename = open('words.txt', 'r')
     words_list = filename.readlines()
+    filename.close()
      
     # for word in words_list:
     #     print(word, end = '')
