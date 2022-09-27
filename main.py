@@ -1,22 +1,48 @@
-from fileinput import filename
 import random
-from turtle import clear
 
+
+#-------------------------------------------------------------------------------
+#A function that reads a text file of words and randomly selects one to use as the secret word 
 def choose_secret_word():
     filename = open('words.txt', 'r')
     words_list = filename.readlines()
     filename.close()
-     
-    # for word in words_list:
-    #     print(word, end = '')
-    
     words_list = words_list[0].split(' ')
     secret_word = random.choice(words_list)
     #print(secret_word)
     return secret_word
 
+
+
+#--------------------------------------------------------------------------------
+# #    A function that checks if all the letters of the secret word have been guessed.
+# def is_word_guessed(secret_word, letters_guessed):
+#      # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
+
+
+
+# #--------------------------------------------------------------------------------
+# #A function that is used to get a string showing the letters guessed so far in the secret word and underscores 
+# # for letters that have not been guessed yet.
+# def get_guessed_word(secret_word, letters_guessed):
+#     #TODO: Loop through the letters in secret word and build a string that shows the letters that 
+#     # have been guessed correctly so far that are saved in letters_guessed and underscores for 
+#     # the letters that have not been guessed yet
+
+# #--------------------------------------------------------------------------------
+# # A function to check if the guessed letter is in the secret word
+# def is_guess_in_word(guess, secret_word):
+#     #TODO: check if the letter guess is in the secret word
+
+
+# #--------------------------------------------------------------------------------
+# # A function that controls the game of spaceman. Will start spaceman in the command line.
 def play_spaceman(secret_word):
     print(secret_word)
+    guess = 0
+    while guess < 7:
+        userInput = input('Enter a letter to guess: ')
+        guess += 1
 
 
 #These function calls that will start the game
