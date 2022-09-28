@@ -16,8 +16,13 @@ def choose_secret_word():
 
 #--------------------------------------------------------------------------------
 # #    A function that checks if all the letters of the secret word have been guessed.
-# def is_word_guessed(secret_word, letters_guessed):
-     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
+def is_word_guessed(secret_word, letters_guessed):
+    for letter in letters_guessed:
+        if letter in secret_word:
+            return True
+
+     # TODO: Loop through
+     # the letters in the secret_word and check if a letter is not in lettersGuessed
 # 
 # #--------------------------------------------------------------------------------
 # #A function that is used to get a string showing the letters guessed so far in the secret word and underscores 
