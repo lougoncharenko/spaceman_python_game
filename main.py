@@ -61,6 +61,12 @@ def play_spaceman(secret_word):
         letters_guessed.append(userInput)
         get_guessed_word(secret_word, letters_guessed)
         guess += 1
+    if is_word_guessed():
+        print('Player Won the game')
+    else:
+        print('Player Lost Game')
+   
+        
 
 
 #These function calls that will start the game
