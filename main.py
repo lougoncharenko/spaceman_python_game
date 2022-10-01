@@ -15,18 +15,14 @@ def choose_secret_word():
 
 #--------------------------------------------------------------------------------
 #A function that checks if all the letters of the secret word have been guessed.
-def is_word_guessed(secret_word, letters_guessed):
-    for letter in letters_guessed:
-        if letter in secret_word:
+def is_word_guessed(secret_word, string):
+        if string == secret_word:
             return True
         else:
             return False
 
 ##--------------------------------------------------------------------------------
-
-#     #TODO: Loop through the letters in secret word and build a string that shows the letters that 
-#     # have been guessed correctly so far that are saved in letters_guessed and underscores for 
-#     # the letters that have not been guessed yet
+#Loops through letters guessed and returns a string with correct letters guessed.
 def get_guessed_word(secret_word, letters_guessed):
     string = ''
     for letter in secret_word:
@@ -60,8 +56,10 @@ def play_spaceman(secret_word):
         letters_guessed.append(userInput)
         string = get_guessed_word(secret_word, letters_guessed)
         print(string)
+        guesses_left = 6 - guess
+        print(f'You have {guesses_left} guesses left')
         guess += 1
-    if is_word_guessed(secret_word, letters_guessed):
+    if is_word_guessed(secret_word, string):
         print('Player Won the game')
     else:
         print('Player Lost Game')
