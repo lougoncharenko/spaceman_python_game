@@ -9,34 +9,31 @@ def choose_secret_word():
     filename.close()
     words_list = words_list[0].split(' ')
     secret_word = random.choice(words_list)
-    #print(secret_word)
     return secret_word
 
 
 
 #--------------------------------------------------------------------------------
-# #    A function that checks if all the letters of the secret word have been guessed.
+#A function that checks if all the letters of the secret word have been guessed.
 def is_word_guessed(secret_word, letters_guessed):
     for letter in letters_guessed:
         if letter in secret_word:
             return True
 
-     # TODO: Loop through
-     # the letters in the secret_word and check if a letter is not in lettersGuessed
-# 
-# #--------------------------------------------------------------------------------
-# #A function that is used to get a string showing the letters guessed so far in the secret word and underscores 
-# # for letters that have not been guessed yet.
-# def get_guessed_word(secret_word, letters_guessed):
-#      for letter in secret_word:
-#         print(letter)
+##--------------------------------------------------------------------------------
+
 #     #TODO: Loop through the letters in secret word and build a string that shows the letters that 
 #     # have been guessed correctly so far that are saved in letters_guessed and underscores for 
 #     # the letters that have not been guessed yet
 def get_guessed_word(secret_word, letters_guessed):
-    print(letters_guessed)
-    print(secret_word)
-
+    string = ''
+    for letter in secret_word:
+        if letter in letters_guessed:
+            string += letter
+        else:
+            string += '_'
+    return string
+  
 
 
 # #--------------------------------------------------------------------------------
@@ -59,7 +56,8 @@ def play_spaceman(secret_word):
         userInput = input('Enter a letter to guess: ')
         is_guess_in_word(userInput, secret_word)
         letters_guessed.append(userInput)
-        get_guessed_word(secret_word, letters_guessed)
+        string = get_guessed_word(secret_word, letters_guessed)
+        print(string)
         guess += 1
     if is_word_guessed(secret_word, letters_guessed):
         print('Player Won the game')
