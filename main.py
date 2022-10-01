@@ -63,6 +63,7 @@ def play_spaceman(secret_word):
         print('Player Won the game')
     else:
         print('Player Lost Game')
+        print(f'Secret word is {secret_word}')
    
         
 
