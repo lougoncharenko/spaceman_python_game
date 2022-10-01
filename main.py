@@ -19,6 +19,8 @@ def is_word_guessed(secret_word, letters_guessed):
     for letter in letters_guessed:
         if letter in secret_word:
             return True
+        else:
+            return False
 
 ##--------------------------------------------------------------------------------
 
